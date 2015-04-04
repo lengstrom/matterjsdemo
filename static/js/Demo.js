@@ -850,12 +850,11 @@ socket.on('d', function(d){
     
     Demo.ballPool = function() {
         var _world = _engine.world;
-        
+
         Demo.reset();
-        window.rect = Bodies.rectangle(400, 400, 400, 50, {isStatic:true});
-        Matter.Body.rotate(rect, .05);
+        window.rect = Bodies.rectangle(400, 350, 400, 50, {isStatic:true});
         var stack = Composites.stack(100, 50, 10, 15, 10, 10, function(x, y, column, row) {
-            return Bodies.circle(x, y, Common.random(15, 30), { restitution: 0.6, friction: 0.1 });
+            return Bodies.circle(x, y, Common.random(15, 30), {restitution: 0.6, friction: 0.1});
         });
         
         World.add(_world, [
